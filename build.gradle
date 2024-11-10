@@ -136,13 +136,9 @@ sourceSets.each {
 }
 
 shadowJar {
-//    classifier = ''
     configurations = [project.configurations.shade]
-//    relocate 'com.google', "${project.group}.shadow.com.google"
     relocate 'org.aopalliance', "${project.group}.shadow.org.aopalliance"
     relocate "javax.inject", "${project.group}.shadow.javax.inject"
-    exclude "whitelist.txt"
-    exclude "default_config.json"
 
     archiveBaseName.set(rootProject.name)
     archiveClassifier.set("")
